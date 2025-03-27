@@ -1,4 +1,5 @@
 ﻿using DavRelayUp.AuthTrigger;
+using DavRelayUp.StartEfs;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
@@ -302,6 +303,9 @@ namespace DavRelayUp
             
             // Hook AcquireCredentialsHandle and InitializeSecurityContext before triggering system auth using RPC
             KrbSCM.HookSecurityContext();
+
+            // Start EFS service
+            EfsHandler.Start();
 
             // Trigger authentication from local machine account
             EfsTrigger.Trigger("127.0.0.1", Environment.MachineName, Options.webdavServerPort, EfsTrigger.ApiCall.EfsRpcDecryptFileSrv);

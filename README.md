@@ -12,6 +12,8 @@ A quick and dirty port of [KrbRelayUp](https://github.com/Dec0ne/KrbRelayUp) wit
 
 **This is essentially a universal no-fix local privilege escalation in domain-joined windows workstations where LDAP signing is not enforced (the default settings).**
 
+## Windows 11 Fix
+The original DavRelayUp uses the RPC interface `c681d488-d850-11d0-8c52-00c04fd90f7e` with the `lsarpc` pipe to trigger PetitPotam. In Windows 11, the efslsaext.dll module is not loaded by LSASS by default anymore in Windows 11. This fix uses the `df1941c5-fe89-4e79-bf10-463657acf44d` RPC interface, which is used by `efssvc.dll` to trigger PetitPotam. However, the EFS service needs to be enabled. This fix automatically starts the `EFS` service if not started.
 
 ## Usage
 ```

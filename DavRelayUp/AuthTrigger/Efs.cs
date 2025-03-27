@@ -18,14 +18,14 @@ namespace DavRelayUp.AuthTrigger
         [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         public Efs()
         {
-            interfaceId = new Guid("c681d488-d850-11d0-8c52-00c04fd90f7e");
+            interfaceId = new Guid("df1941c5-fe89-4e79-bf10-463657acf44d");
             if (IntPtr.Size == 8)
             {
-                InitializeStub(interfaceId, MIDL_ProcFormatStringx64, MIDL_TypeFormatStringx64, "\\pipe\\lsarpc", 1, 0);
+                InitializeStub(interfaceId, MIDL_ProcFormatStringx64, MIDL_TypeFormatStringx64, "\\pipe\\efsrpc", 1, 0);
             }
             else
             {
-                InitializeStub(interfaceId, MIDL_ProcFormatStringx86, MIDL_TypeFormatStringx86, "\\pipe\\lsarpc", 1, 0);
+                InitializeStub(interfaceId, MIDL_ProcFormatStringx86, MIDL_TypeFormatStringx86, "\\pipe\\efsrpc", 1, 0);
             }
         }
 

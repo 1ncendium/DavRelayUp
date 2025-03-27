@@ -319,6 +319,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="S4U.cs" />
+    <Compile Include="StartEFS\StartEfs.cs" />
     <Compile Include="WebClientEnabler.cs" />
   </ItemGroup>
   <ItemGroup>
